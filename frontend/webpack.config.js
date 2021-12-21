@@ -38,6 +38,9 @@ module.exports = {
     path: path.resolve(CURRENT_WORKING_DIR, "./build"),
     filename: "bundle.js",
   },
+  devServer: {
+    historyApiFallback: true,
+  },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new HTMLWebpackPlugin({ template: path.resolve("./src/index.html") }),

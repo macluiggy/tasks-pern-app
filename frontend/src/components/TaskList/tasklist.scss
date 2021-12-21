@@ -1,0 +1,16 @@
+// .hello {
+//   color: red;
+// }
+.MuiCardContent-root {
+  @media screen and (max-width: 600px) {
+    // background-color: red;
+    flex-direction: column;
+  }
+}
+
+.MuiButton-root {
+  @media screen and (max-width: 600px) {
+    background-color: red;
+    flex-direction: column;
+  }
+}
