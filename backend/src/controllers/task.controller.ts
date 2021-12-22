@@ -1,38 +1,34 @@
 import pool from "../database";
+import { Request, Response, NextFunction } from "express";
 import dotenv from "dotenv";
 dotenv.config();
-export const test = async (req, res, next) => {
-  // res.send("Hello World");
+import { HTTPMethods } from "../types/index";
+
+export const test: HTTPMethods = async (req, res, next) => {
   try {
     const response = await pool.query("SELECT * FROM users");
     console.log(process.env.USER);
     res.json(response.rows);
   } catch (error) {
-    // console.log(error);
-    // res.json({ message: error.message });
     console.log(error);
     if (process.env.NODE_ENV !== "production") return next(error);
     return res.json({ Error: "Server error (500)... Please try again later" });
   }
 };
 
-export const getAllTasks = async (req, res, next) => {
-  // res.send("Hello from tasks");
+export const getAllTasks: HTTPMethods = async (req, res, next) => {
   try {
     const result = await pool.query("SELECT * FROM tasks");
     console.log(result);
     res.json(result.rows);
   } catch (error) {
-    // console.log(error);
-    // res.json({ message: error.message });
     console.log(error);
     if (process.env.NODE_ENV !== "production") return next(error);
     return res.json({ Error: "Server error (500)... Please try again later" });
   }
 };
 
-export const getTask = async (req, res, next) => {
-  // res.send("Hello from tasks");
+export const getTask: HTTPMethods = async (req, res, next) => {
   const { id } = req.params;
   try {
     const result = await pool.query("SELECT * FROM tasks WHERE id = $1", [id]);
@@ -40,20 +36,13 @@ export const getTask = async (req, res, next) => {
     if (!result.rows.length) return res.status(404).json("Task not found");
     return res.status(200).json(result.rows);
   } catch (error) {
-    // console.log(error);
-    // const errMessage =
-    //   process.env.NODE_ENV === "production"
-    //     ? "Server error (500)... Please try again later"
-    //     : error.message;
-    // return res.json({ Error: errMessage });
     console.log(error);
     if (process.env.NODE_ENV !== "production") return next(error);
     return res.json({ Error: "Server error (500)... Please try again later" });
   }
 };
 
-export const createTask = async (req, res, next) => {
-  // res.send("Hello from tasks");
+export const createTask: HTTPMethods = async (req, res, next) => {
   const { title, description } = req.body;
   try {
     const result = await pool.query(
@@ -66,20 +55,13 @@ export const createTask = async (req, res, next) => {
       body: { title, description },
     });
   } catch (error) {
-    // console.log(error);
-    // const errMessage =
-    //   process.env.NODE_ENV === "production"
-    //     ? "Server error (500)... Please try again later"
-    //     : error.message;
-    // res.json({ Error: errMessage });
     console.log(error);
     if (process.env.NODE_ENV !== "production") return next(error);
     return res.json({ Error: "Title task already exists in other task" });
   }
 };
 
-export const udpateTask = async (req, res, next) => {
-  // res.send("Hello from tasks");
+export const udpateTask: HTTPMethods = async (req, res, next) => {
   const { id } = req.params;
   const { title, description } = req.body;
   try {
@@ -99,8 +81,7 @@ export const udpateTask = async (req, res, next) => {
   }
 };
 
-export const deeleteTask = async (req, res, next) => {
-  // res.send("Hello from tasks");
+export const deeleteTask: HTTPMethods = async (req, res, next) => {
   const { id } = req.params;
   try {
     const result = await pool.query(
@@ -109,15 +90,8 @@ export const deeleteTask = async (req, res, next) => {
     );
     console.log(result);
     if (!result.rowCount) return res.status(404).json("Task not found");
-    // return res.status(200).json({ "user deleted": result.rows[0] });
     return res.sendStatus(204); // 204 = no content, no data to return to client (no content), but the request was successful (no error) (https://developer.mozilla.org/en-US/docs/Web/HTTP/Status) (https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/204)
   } catch (error) {
-    // console.log(error);
-    // const errMessage =
-    //   process.env.NODE_ENV === "production"
-    //     ? "Server error (500)... Please try again later"
-    //     : error.message;
-    // res.json({ Error: errMessage });
     console.log(error);
     if (process.env.NODE_ENV !== "production") return next(error);
     return res.json({ Error: "Server error (500), please try againd" });

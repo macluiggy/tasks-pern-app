@@ -8,8 +8,16 @@
     "dev": "nodemon",
     "build": "webpack --mode=production --config webpack.config.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "node",
+    "express",
+    "backend",
+    "api",
+    "rest",
+    "typescript",
+    "webpack"
+  ],
+  "author": "Luiggy Macias",
   "license": "ISC",
   "devDependencies": {
     "@babel/cli": "^7.16.0",
@@ -17,8 +25,10 @@
     "@babel/node": "^7.16.5",
     "@babel/preset-env": "^7.16.5",
     "@babel/preset-typescript": "^7.16.5",
+    "@types/cors": "^2.8.12",
     "@types/express": "^4.17.13",
     "@types/node": "^17.0.1",
+    "@types/pg": "^8.6.3",
     "buffer": "^6.0.3",
     "crypto-browserify": "^3.12.0",
     "dotenv": "^10.0.0",
@@ -34,6 +44,7 @@
     "webpack-node-externals": "^3.0.0"
   },
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.2",
     "pg": "^8.7.1"
   },
