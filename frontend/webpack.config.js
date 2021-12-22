@@ -45,6 +45,8 @@ module.exports = {
   ],
   devServer: {
     historyApiFallback: true,
+    port: 8080,
+    compress: true,
     static: path.resolve(CURRENT_WORKING_DIR, "./build"),
     hot: true,
   },
