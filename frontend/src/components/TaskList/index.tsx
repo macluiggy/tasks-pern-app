@@ -17,7 +17,7 @@ const TaskList = () => {
       console.log(error);
     }
   };
-  const handleDelete = async (id) => {
+  const handleDelete = async (id: string | number) => {
     try {
       const res = await fetch(`${proxy}/api/tasks/${id}`, {
         method: "DELETE",

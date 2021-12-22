@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 import { useNavigate, useParams } from "react-router-dom";
 import { proxy } from "./../../config/";
-
+// import { onEvent } from "../../types/";
 function TaskForm() {
   const [task, setTask] = useState({ title: "", description: "" });
   const [loading, setLoading] = useState(false);
@@ -19,7 +19,7 @@ function TaskForm() {
   const navigate = useNavigate();
   const params = useParams();
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // console.log("submit");
     // console.log(task);
@@ -56,12 +56,14 @@ function TaskForm() {
       }
     }
   };
-  const handleChange = (e) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     // console.log(name, value);
     setTask({ ...task, [name]: value }); //[name] is the same as name: value, but this sintax is used to avoid the error of the name being a string; [name] es lo mismo que name: value, pero se usa esta sintaxis para evitar el error de que el nombre sea un string
   };
-  const loadTask = async (id) => {
+  const loadTask = async (id: number | string) => {
     try {
       const response = await fetch(`${proxy}/api/tasks/${id}`);
       const data = await response.json();

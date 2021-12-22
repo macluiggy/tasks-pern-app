@@ -6,12 +6,9 @@ import { Container } from "@mui/material";
 import TaskForm from "./components/TaskForm";
 import Menu from "./components/Navbar";
 import TaskList from "./components/TaskList";
-import { proxy } from "./config";
+// import { proxy } from "./config";
 
 const App = () => {
-  fetch(`${proxy}/api/tasks`)
-    .then((json) => json.json())
-    .then((data) => console.log(data, "helllo"));
   return (
     <BrowserRouter>
       <Menu />
