@@ -31,22 +31,21 @@ module.exports = {
   module: {
     rules: [rulesForJavaScript, rulesForTypescript, rulesForSass],
   },
+  output: {
+    filename: "bundle.js",
+    path: path.resolve(CURRENT_WORKING_DIR, "build"),
+    publicPath: "/",
+  },
   resolve: {
     extensions: ["*", ".js", ".jsx", ".ts", ".tsx"],
-  },
-  output: {
-    path: path.resolve(CURRENT_WORKING_DIR, "./build"),
-    filename: "bundle.js",
-  },
-  devServer: {
-    historyApiFallback: true,
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new HTMLWebpackPlugin({ template: path.resolve("./src/index.html") }),
   ],
   devServer: {
-    static: path.resolve(CURRENT_WORKING_DIR, "./dist"),
+    historyApiFallback: true,
+    static: path.resolve(CURRENT_WORKING_DIR, "./build"),
     hot: true,
   },
 };
