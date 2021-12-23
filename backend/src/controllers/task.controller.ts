@@ -69,7 +69,7 @@ export const udpateTask: HTTPMethods = async (req, res, next) => {
       "UPDATE tasks SET title = $1, description = $2 WHERE id = $3 RETURNING *",
       [title, description, id]
     );
-    console.log(result);
+    // console.log(result);
     if (!result.rowCount) return res.status(404).json("Task not found");
     return res
       .status(200)
