@@ -97,7 +97,7 @@ npm dev
 npm test
 ```
 
-HTTP Methods:
+### HTTP Methods:
 
 - GET: `/tasks`
 - GET: `/tasks/:id`
