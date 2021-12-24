@@ -90,3 +90,13 @@ npm dev
 ```
 
 7. Open the app in your browser on [localhost:3000](http://localhost:3000)
+
+HTTP Methods:
+
+- GET: `/tasks`
+- GET: `/tasks/:id`
+- POST: `/tasks`
+  - Body: `{ title: 'Some title', description: 'Some description' }`
+- PUT: `/tasks/:id`
+  - Body: `{ title: 'Some title', description: 'Some description' }`
+- DELETE: `/tasks/:id`
