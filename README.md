@@ -54,10 +54,39 @@ cd tasks-pern-app/backend
 npm install
 ```
 
-4. Run the app
+4. You must have postgres installed on your machine. If so, run the following command to create the database, a table and insert some data on it.
+
+````sql
+CREATE DATABASE tasks_pern;
+
+CREATE TABLE tasks (
+  id SERIAL PRIMARY KEY,
+  title VARCHAR(255) UNIQUE,
+  description VARCHAR(255) NOT NULL,
+  status VARCHAR(40)
+);
+
+INSERT INTO tasks (title, description, status) VALUES
+    ('Learn to code', 'Learn to code in a language of your choice', 'todo'),
+    ('Learn to cook', 'Learn to cook in a language of your choice', 'todo'),
+    ('Learn to dance', 'Learn to dance in a language of your choice', 'todo');
+
+```
+5. Add the environment variables to your .env file like the sample.env file
+
+```bash
+PG_USER=postgres
+PG_PASSWORD=''
+PG_HOST=localhost
+PG_PORT=5432
+PG_DATABASE=tasks_pern
+
+````
+
+6. Run the app
 
 ```bash
 npm dev
 ```
 
-5. Open the app in your browser on [localhost:3000](http://localhost:3000)
+7. Open the app in your browser on [localhost:3000](http://localhost:3000)
