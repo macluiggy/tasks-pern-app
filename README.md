@@ -75,22 +75,17 @@ INSERT INTO tasks (title, description, status) VALUES
 
 5. Add the environment variables to your .env file like the sample.env file
 
-```bash
+````bash
 PG_USER=postgres
 PG_PASSWORD=''
 PG_HOST=localhost
 PG_PORT=5432
-PG_DATABASE=tasks_pern
-```
+PG_DATABASE=tasks_pern ```
 
 6. Run the app
 
 ```bash
 npm dev
-```
+````
 
 7. Open the app in your browser on [localhost:3000](http://localhost:3000)
-
-```
-
-```
