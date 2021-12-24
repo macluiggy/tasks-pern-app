@@ -75,7 +75,7 @@ INSERT INTO tasks (title, description, status) VALUES
 
 5. Add the environment variables to your .env file like the sample.env file
 
-```bash
+```env
 PG_USER=postgres
 PG_PASSWORD=''
 PG_HOST=localhost
