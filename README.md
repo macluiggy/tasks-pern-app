@@ -54,7 +54,7 @@ cd tasks-pern-app/backend
 npm install
 ```
 
-4. You must have PostgreSQL installed on your machine. If so open PostgreSQL and run the following command to create the database, a table and insert some data on it.
+4. You must have PostgreSQL installed on your machine. If so open postgres and run the following command to create the database, a table and insert some data on it.
 
 ```sql
 CREATE DATABASE tasks_pern;
