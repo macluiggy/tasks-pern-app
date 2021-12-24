@@ -34,7 +34,7 @@ npm start
 
 ## Backend
 
-[Live demo](https://tasks-pern.herokuapp.com/) see this app in action. Or:
+[Live demo](https://tasks-pern-stack.herokuapp.com/) see this app in action. Or:
 
 1. Clone this repository
 
