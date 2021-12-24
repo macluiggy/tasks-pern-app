@@ -7,6 +7,7 @@
     "start": "node dist/bundle.js",
     "dev": "nodemon",
     "dev2": "webpack --mode=development --config ./webpack.config.js",
+    "dev3": "NODE_ENV=dev nodemon -r tsconfig-paths/register src/index.ts",
     "build": "webpack --mode=production --config webpack.config.js",
     "test": "NODE_ENV=test mocha --check-leaks -r tsconfig-paths/register -r ts-node/register \"src/test/**/*.test.[tj]s\" --watch --extension 'ts,js'",
     "test1": "mocha --watch ./src/test/**/*.[tj]s",
