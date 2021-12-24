@@ -3,3 +3,4 @@ pnpm-lock.yaml
 # build
 /build/bundle.js
 /build/index.html
+/build/bundle.js.LICENSE.txt
