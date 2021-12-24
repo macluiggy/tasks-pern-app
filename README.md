@@ -87,6 +87,8 @@ PG_DATABASE=tasks_pern
 
 ```bash
 npm dev
+
+
 ```
 
 7. Open the app in your browser on [localhost:3000](http://localhost:3000)
