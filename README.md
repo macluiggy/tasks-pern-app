@@ -2,12 +2,6 @@
 
 A fullstack PERN Stack Tasks App with React, PostgreSQL, Webpack, Babel, TypeScript, Express, and Node.js. This app is a simple todo list app that uses the PERN Stack, where the user can create tasks, edit them, and delete them. The backend is deployed on Heroku and the frontend is deployed on Netlify.
 
-## Run the tests
-
-```
-npm test
-```
-
 ## Frontend
 
 [Live demo](https://tasks-pern.netlify.app/) to see this app in action. Or:
@@ -96,6 +90,12 @@ npm dev
 ```
 
 7. Open the app in your browser on [localhost:3000](http://localhost:3000)
+
+## Run the backend tests
+
+```
+npm test
+```
 
 HTTP Methods:
 
