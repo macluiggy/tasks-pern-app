@@ -91,7 +91,7 @@ npm dev
 
 7. Open the app in your browser on [localhost:3000](http://localhost:3000)
 
-###### Run the backend tests
+### Run the backend tests
 
 ```
 npm test
