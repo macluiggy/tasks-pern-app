@@ -21,6 +21,9 @@ describe("index.test.ts", () => {
   it("hello equal hello", () => {
     assert.equal("hello", "hello");
   });
+});
+
+describe("Test HTTP Methods", () => {
   it("test GET api hello", (done) => {
     chai
       .request(server)
@@ -31,15 +34,41 @@ describe("index.test.ts", () => {
         done();
       });
   });
+  it("Create a task", (done) => {
+    chai
+      .request(server)
+      .post("/api/tasks")
+      .send({
+        title: "test",
+        description: "test",
+      })
+      .end((err, res) => {
+        // console.log(res);
+        console.log(res);
+        assert.equal(res.status, 500);
+        assert.equal(res.created, false);
+        done();
+      });
+  });
   it("get the corresponding task", (done) => {
     chai
       .request(server)
-      .get("/api/task/39")
+      .get("/api/tasks/39")
       .end((err, res) => {
+        const { id, title, description, status } = res.body[0];
+        const { files, ok, setEncoding } = res;
+        // console.log(res);
         assert.equal(res.status, 200);
-        // assert.equal(res.body.id, 39);
-        // console.log(res.body);
-        assert.isNotOk(res.body.id);
+        assert.strictEqual(id, 39);
+        assert.isNumber(id);
+        assert.equal(res.type, "application/json");
+        assert.equal(title, "test2");
+        assert.equal(description, "todo2");
+        assert.notEqual(description, "todo1");
+        assert.isNull(status);
+        assert.isUndefined(files);
+        assert.isTrue(ok);
+        assert.isFunction(setEncoding);
         done();
       });
   });
@@ -52,7 +81,7 @@ describe("index.test.ts", () => {
         description: "todo2",
       })
       .end((err, res) => {
-        console.log(res);
+        // console.log(res);
         // const { rows } = res.body;
         assert.equal(res.status, 200);
         // assert.equal(res.body.rowCount, 1);

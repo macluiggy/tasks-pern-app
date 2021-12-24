@@ -32,7 +32,7 @@ export const getTask: HTTPMethods = async (req, res, next) => {
   const { id } = req.params;
   try {
     const result = await pool.query("SELECT * FROM tasks WHERE id = $1", [id]);
-    console.log(result);
+    // console.log(result);
     if (!result.rows.length) return res.status(404).json("Task not found");
     return res.status(200).json(result.rows);
   } catch (error) {
@@ -55,7 +55,7 @@ export const createTask: HTTPMethods = async (req, res, next) => {
       body: { title, description },
     });
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     if (process.env.NODE_ENV !== "production") return next(error);
     return res.json({ Error: "Title task already exists in other task" });
   }
