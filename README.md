@@ -4,7 +4,7 @@ A fullstack PERN Stack Tasks App with React, PostgreSQL, Webpack, Babel, TypeScr
 
 ## Frontend
 
-[Live demo](https://tasks-pern.netlify.app/) see this app in action. Or:
+[Live demo](https://tasks-pern.netlify.app/) to see this app in action. Or:
 
 1. Clone this repository
 
@@ -34,7 +34,7 @@ npm start
 
 ## Backend
 
-[Live demo](https://tasks-pern-stack.herokuapp.com/) see this app in action. Or:
+[Live demo](https://tasks-pern-stack.herokuapp.com/) to see this app in action. Or:
 
 1. Clone this repository
 
