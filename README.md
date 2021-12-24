@@ -56,7 +56,7 @@ npm install
 
 4. You must have postgres installed on your machine. If so, run the following command to create the database, a table and insert some data on it.
 
-````sql
+```sql
 CREATE DATABASE tasks_pern;
 
 CREATE TABLE tasks (
@@ -72,6 +72,7 @@ INSERT INTO tasks (title, description, status) VALUES
     ('Learn to dance', 'Learn to dance in a language of your choice', 'todo');
 
 ```
+
 5. Add the environment variables to your .env file like the sample.env file
 
 ```bash
@@ -89,4 +90,7 @@ npm dev
 ```
 
 7. Open the app in your browser on [localhost:3000](http://localhost:3000)
-````
+
+```
+
+```
