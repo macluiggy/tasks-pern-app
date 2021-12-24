@@ -4,8 +4,7 @@ A fullstack PERN Stack Tasks App with React, PostgreSQL, Webpack, Babel, TypeScr
 
 ## Frontend
 
-[Live demo](https://tasks-pern.netlify.app/)
-To see this app in action, click the button below to open the demo. Or:
+[Live demo](https://tasks-pern.netlify.app/) see this app in action. Or:
 
 1. Clone this repository
 
@@ -32,3 +31,33 @@ npm start
 ```
 
 5. Open the app in your browser on [localhost:8080](http://localhost:8080)
+
+## Backend
+
+[Live demo](https://tasks-pern.herokuapp.com/) see this app in action. Or:
+
+1. Clone this repository
+
+```bash
+git clone https://github.com/macluiggy/tasks-pern-app.git
+```
+
+2. Go to backend folder
+
+```bash
+cd tasks-pern-app/backend
+```
+
+3. Install dependencies
+
+```bash
+npm install
+```
+
+4. Run the app
+
+```bash
+npm dev
+```
+
+5. Open the app in your browser on [localhost:3000](http://localhost:3000)
