@@ -6,6 +6,7 @@ import { Container } from "@mui/material";
 import TaskForm from "./components/TaskForm";
 import Menu from "./components/Navbar";
 import TaskList from "./components/TaskList";
+import NotFound404 from "./components/404";
 // import { proxy } from "./config";
 
 const App = () => {
@@ -23,6 +24,7 @@ const App = () => {
           <Route path="/" element={<TaskList />} />
           <Route path="/tasks/new" element={<TaskForm />} />
           <Route path="/tasks/:id/edit" element={<TaskForm />}></Route>
+          <Route path="/*" element={<NotFound404 />}></Route>
         </Routes>
       </Container>
     </BrowserRouter>
