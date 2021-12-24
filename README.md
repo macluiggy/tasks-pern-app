@@ -80,8 +80,7 @@ PG_PASSWORD=''
 PG_HOST=localhost
 PG_PORT=5432
 PG_DATABASE=tasks_pern
-
-````
+```
 
 6. Run the app
 
@@ -90,3 +89,4 @@ npm dev
 ```
 
 7. Open the app in your browser on [localhost:3000](http://localhost:3000)
+````
